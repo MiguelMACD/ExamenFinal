@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Documentos Disponibles</title>
+</head>
+<body>
+    <h1>Documentos Disponibles</h1>
+    <ul>
+        {% for documento in documentos %}
+        <li>
+            <h3>{{ documento.titulo }}</h3>
+            <p>Autor: {{ documento.autor }}</p>
+            <p>Categoría: {{ documento.categoria }}</p>
+            <a href="{% url 'detalle_documento' documento.id %}">Ver Detalles</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'subir_documento' %}">Subir Nuevo Documento</a>
+</body>
+</html>

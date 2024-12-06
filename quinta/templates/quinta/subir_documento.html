@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Subir Documento</title>
+</head>
+<body>
+    <h1>Subir un Nuevo Documento</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required><br>
+
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" name="autor" required><br>
+
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria" name="categoria" required><br>
+
+        <label for="archivo">Archivo (PDF):</label>
+        <input type="file" id="archivo" name="archivo" accept="application/pdf" required><br>
+
+        <button type="submit">Subir Documento</button>
+    </form>
+</body>
+</html>
