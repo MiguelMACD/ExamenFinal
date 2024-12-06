@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vehículos Disponibles</title>
+</head>
+<body>
+    <h1>Vehículos Disponibles</h1>
+    <ul>
+        {% for vehiculo in vehiculos %}
+        <li>
+            <h3>{{ vehiculo.marca }} {{ vehiculo.modelo }} ({{ vehiculo.año }})</h3>
+            <p>Capacidad: {{ vehiculo.capacidad }} personas</p>
+            <p>Disponibilidad: {{ vehiculo.disponibilidad }}</p>
+            <a href="{% url 'detalle_vehiculo' vehiculo.id %}">Ver Detalles</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

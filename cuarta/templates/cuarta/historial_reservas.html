@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Historial de Reservas</title>
+</head>
+<body>
+    <h1>Historial de Reservas</h1>
+    <ul>
+        {% for reserva in reservas %}
+        <li>
+            <h3>Reserva #{{ reserva.id }} - Vehículo: {{ reserva.vehiculo.marca }} {{ reserva.vehiculo.modelo }}</h3>
+            <p>Fecha de Reserva: {{ reserva.fecha_inicio }} - {{ reserva.fecha_fin }}</p>
+            <p>Precio Total: ${{ reserva.precio_total }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
