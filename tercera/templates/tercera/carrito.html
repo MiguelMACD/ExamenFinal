@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <ul>
+        {% for item in carrito %}
+        <li>{{ item.nombre }} - ${{ item.precio }} x {{ item.cantidad }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: ${{ total }}</p>
+    <form action="/ordenes/realizar_pedido/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="productos" value="{{ carrito|json_script:'carrito' }}">
+        <button type="submit">Realizar Pedido</button>
+    </form>
+</body>
+</html>

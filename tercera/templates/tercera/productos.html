@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Productos Disponibles</h1>
+    <ul>
+        {% for producto in productos %}
+        <li>
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.descripcion }}</p>
+            <p>Precio: ${{ producto.precio }}</p>
+            <p>Cantidad disponible: {{ producto.cantidad_disponible }}</p>
+            <form action="{% url 'agregar_al_carrito' producto.id %}" method="get">
+                <button type="submit">Agregar al Carrito</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

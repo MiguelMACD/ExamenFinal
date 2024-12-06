@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Historial de Pedidos</title>
+</head>
+<body>
+    <h1>Historial de Pedidos</h1>
+    <ul>
+        {% for orden in ordenes %}
+        <li>
+            <h3>Pedido #{{ orden.id }} - Total: ${{ orden.total }}</h3>
+            <p>Fecha: {{ orden.fecha }}</p>
+            <ul>
+                {% for item in orden.productos.all %}
+                <li>{{ item.nombre }} - {{ item.precio }} x {{ item.ordenproducto_set.first.cantidad }} unidades</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
