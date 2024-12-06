@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Detalle del Médico</title>
+</head>
+<body>
+    <h1>{{ medico.nombre }}</h1>
+    <p>Especialidad: {{ medico.especialidad }}</p>
+    <h2>Pacientes Asignados</h2>
+    <ul>
+        {% for paciente in pacientes %}
+        <li>{{ paciente.nombre }} - {{ paciente.enfermedad_diagnosticada }} - {{ paciente.edad }} años</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

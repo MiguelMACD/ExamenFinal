@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registrar Paciente</title>
+</head>
+<body>
+    <h1>Registrar Paciente</h1>
+    <form action="{% url 'registrar_paciente' medico.id %}" method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" required><br>
+
+        <label for="enfermedad_diagnosticada">Enfermedad Diagnósticada:</label>
+        <textarea name="enfermedad_diagnosticada" required></textarea><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

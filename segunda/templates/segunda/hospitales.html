@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hospitales</title>
+</head>
+<body>
+    <h1>Hospitales</h1>
+    <ul>
+        {% for hospital in hospitales %}
+        <li>
+            <h3>{{ hospital.nombre }}</h3>
+            <p>{{ hospital.direccion }}</p>
+            <p>{{ hospital.telefono }}</p>
+            <h4>Médicos:</h4>
+            <ul>
+                {% for medico in hospital.medicos.all %}
+                <li>{{ medico.nombre }} - {{ medico.especialidad }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
